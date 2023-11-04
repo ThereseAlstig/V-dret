@@ -7,13 +7,8 @@ const daysDiv = document.getElementById('days').children;
 const basicInfo = document.getElementById('content');
 const mainweather = document.getElementById('vädret');
 
+getWeather();
 
-function visaData(event) {
-    event.preventDefault();
-    days = parseInt(event.target.getAttribute('datadays'));
-   
-  
-}
 
 async function getWeather(){
 city = cityInput.value || 'stockholm';
@@ -44,19 +39,35 @@ for(let i=0; i< weatherData.data.length; i++){
     let datum = day.valid_date;
     let icon = day.weather.icon;
     let description = day.weather.description;
-    daysDiv.style.backgroundColor ='black';
+    let sunrise = day.sunrise_ts;
+    let sunriseTime = new Date(sunrise * 1000);
+    let formatsunrise = sunriseTime.toLocaleTimeString();
+    let sunset = day.sunset_ts;
+    let sunsetTime = new Date(sunset * 1000);
+    let formatsunset = sunsetTime.toLocaleTimeString();
+    let tempNow = day.temp;
+    let vind = day.wind_spd;
+ 
+
     
 
 weatherInfo += 
               `<div class="vädret">
               <div class="dagensVäder">
-              <h2>Datum: ${datum}
-              <p>${description}</p>
+              
+              <div class="höger">
+              <h2>${tempNow} &#8451;</h2>
               <img src="icons/${icon}.png" alt="Vädret">
-              <h2>Som varmast: ${maxtemp} &#8451;</h2>
-              <h2>Som kallast: ${mintemp} &#8451;</h2>
+              <h3>${description}</h3>
+              </div>
+              <div class="vänster">
+              <i>Datum: ${datum}</i>
+              <h3>${mintemp}/${maxtemp} &#8451;</h3>
+              <p>${formatsunrise} <img src="bilder2/sun-312708_640.png" alt="sunrise"  height="100px"> ${formatsunset}</p>
               
+              <p>Vind: ${vind} m/s</p>
               
+              </div>
               </div>
               </div>`
               
@@ -79,7 +90,12 @@ mainweather.innerHTML = weatherInfo;
   });
   
  
- 
+  function visaData(event) {
+    event.preventDefault();
+    days = parseInt(event.target.getAttribute('datadays'));
+    
+  getWeather();
+}
 
   
 

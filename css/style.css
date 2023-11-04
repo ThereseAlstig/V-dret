@@ -1,5 +1,5 @@
 body{
-    background-image: url("../bilder2/heart-1213475.jpg");
+    background-color: rgb(41, 46, 49);
     background-size: 100%;
     font-family: 'Outfit', sans-serif;
 }
@@ -8,29 +8,59 @@ body{
     grid-template-columns:repeat(13, 1fr);
     grid-gap:15px;
     grid-template-rows: auto;
+    width: 100%;
+    height: auto;
+    margin-top: 0 auto;
 
 
 }
 
 
+input{
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+}
+ button{
+    padding: 5px;
+    font-size: 15px;
+  
+    color: black;
+    border-radius: 5px;
+   
+    background-color: rgba(57, 159, 217, 0.5);
+    
+ }
 
+ 
 
+ button:hover, a:hover{
+    box-shadow: 4px 4px 8px 4px rgba(57, 159, 217, 2);
+ }
 
 header{
 text-align: center;
+
+height: 180px;
+width: 100%;
+
+
+
 }
 
 header h1{
-    font-size: 45px;
+    font-size: 55px;
+    
+    
 }
 
 header h2{
     font-size: 35px;
+    
 }
 
 a{
     text-decoration: none;
-    background-color: rgb(251, 249, 247);
     height: 45px;
     width: 55px;
     border: 2px solid black;
@@ -38,17 +68,21 @@ a{
     margin: 15px;
     text-align: center;
     border-radius: 12px;
+    color: black;
+    text-shadow: 5px 5px 8px 5px white;
+    font-size: 20px;
     
-   
+    background-color: rgba(57, 159, 217, 0.5);
     
 }
 
 #sökfält{
    
-    grid-column: 6/9;
+    grid-column: 4/8;
     display: flex;
     align-items: center;
     height: 150px;
+    justify-content: space-evenly;
 
 }
 #days{
@@ -57,7 +91,7 @@ a{
     display: flex;
     flex-direction: column;
     margin-top: 35px;
-    
+   
     
 }
 a:active{
@@ -65,22 +99,80 @@ a:active{
 }
 
 .vädret{
-    background-color: rgba(57, 159, 217, 0.5);
+    background-color: rgba(238, 241, 243, 0.5);
+    background-image: url("../bilder2/bokeh-lights-2592859_1280.jpg");
     grid-column: 3/9;
     grid-row: 2/6;
     border-radius: 12px;
-    box-shadow: 5px 5px 10px 5px rgba(57, 159, 217, 1.5);
+    box-shadow: 5px 5px 10px 5px rgba(238, 241, 243, 0.5);
+    color: aliceblue;
+    border: solid 1px black;
+    
 }
 
 #vädret{
     grid-column: 3/9;
     grid-row: 2/6;
+
+
+}
+
+.dagensVäder{
+display: grid;
+grid-template-columns: repeat(13, 1fr);
+grid-template-rows: repeat(5, 130px);
+margin-bottom: 15px;
+
 }
  #content{
-    grid-column: 9/12;
+    grid-column: 8/11;
     display: flex;
     align-items: center;
     font-size: 45px;
     height: 150px;
+   
+}
+#content h2{
+   text-shadow: 1px 1px 1.5px white; 
+}
     
+.höger{
+    grid-column: 9/13;
+    grid-row:1/6;
+    padding: 25px;
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(31, 41, 48, 0.6);
+    border-radius: 4px;
+}
+.höger img{
+    height: 50%;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+   
+    
+}
+.höger h2{
+    font-size: 55px;
+    text-align: center;
+}
+.höger h3{
+    font-size: 35px;
+    text-align: center;
+}
+
+.vänster{
+    grid-column: 2/9;
+    grid-row: 1/6;
+    text-align: center;
+    justify-content: space-between;
+    background-color: rgba(31, 41, 48, 0.6);
+    border-radius: 4px;
+    margin: 25px 25px 0 0;
+
 }
