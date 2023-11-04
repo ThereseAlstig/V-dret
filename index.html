@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+
+
+
+    
 </head>
 <body>
-    <header></header>
+    <header>
+        <h1>Stadsväder</h1>
+        <h2>Vi har koll</h2>
+    </header>
+
 <main>
-    <input type="text" id="city" value="" innerText="City">
-    <button id="sök">Vädret</button>
+    <div id="gridcontainer">
+
+    <div id="sökfält">
+        <input type="text" id="city" value="" innerText="City">
+        <button id="sök">Vädret</button>
+    </div>
 
     <div id="days">
         <a href="#" datadays="1"onclick="visaData(event)">Idag</a>
@@ -20,15 +33,13 @@
         <a href="#" datadays="10"onclick="visaData(event)">Tio dygn</a>
     </div>
 
-
     <div id="content">
-      
+    </div>
        
-           
-        </div>
-       <div id="vädret">  
 
-       </div>
+    <div id="vädret">  
+    </div>
+</div>
         </main>
     <script t10p10="text/javascript" src="main.js"></script>
 </body>

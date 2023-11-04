@@ -11,7 +11,7 @@ const mainweather = document.getElementById('vädret');
 function visaData(event) {
     event.preventDefault();
     days = parseInt(event.target.getAttribute('datadays'));
- 
+   
   
 }
 
@@ -38,22 +38,28 @@ let weather = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?&days=$
    
     
 for(let i=0; i< weatherData.data.length; i++){
-let day = weatherData.data[i];
-   let maxtemp = day.app_max_temp;
-   let mintemp = day.app_min_temp;
-  let datum = day.valid_date;
-  let icon = day.weather.icon;
-  let description = day.weather.description;
+    let day = weatherData.data[i];
+    let maxtemp = day.app_max_temp;
+    let mintemp = day.app_min_temp;
+    let datum = day.valid_date;
+    let icon = day.weather.icon;
+    let description = day.weather.description;
+    daysDiv.style.backgroundColor ='black';
+    
 
 weatherInfo += 
-              `<div class="dagensVäder">
+              `<div class="vädret">
+              <div class="dagensVäder">
               <h2>Datum: ${datum}
               <p>${description}</p>
               <img src="icons/${icon}.png" alt="Vädret">
               <h2>Som varmast: ${maxtemp} &#8451;</h2>
               <h2>Som kallast: ${mintemp} &#8451;</h2>
               
+              
+              </div>
               </div>`
+              
               
 
 console.log(day);
