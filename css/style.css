@@ -1,11 +1,15 @@
 body{
-   background-color: rgb(243, 245, 247);
+  
+   background-image: url("../bilder2/sun-3588618.jpg");
     background-size: 100%;
     font-family: 'Outfit', sans-serif;
     margin: 0;
     border: 0;
     margin-top: 0 auto;
+    backdrop-filter: blur(10px);
 }
+
+
 header{
 text-align: center;
 border: 0;
@@ -16,15 +20,13 @@ display: flex;
 justify-content: space-around;
 font-family: 'Mochiy Pop P one', sans-serif;
 
-
 }
 
 header h1{
     font-size: 55px;
     color: rgba(18, 160, 226, 0.974);
     text-shadow: 1px 1px 1.5px rgb(7, 7, 7); 
-
-    
+   
 }
 
 
@@ -40,9 +42,6 @@ header h2{
     grid-template-rows: auto;
     width: 100%;
     height: auto;
-   
-
-
 }
 
 
@@ -51,6 +50,7 @@ input{
     font-size: 15px;
     border-radius: 5px;
 }
+
  button{
     padding: 5px;
     font-size: 15px;
@@ -60,14 +60,14 @@ input{
     height: 55px;
     width: 55px;
     background-image: linear-gradient(to bottom right, rgba(18, 160, 226, 0.974),rgb(14, 132, 219),  rgb(244, 244, 192));
- }
+    z-index: 1;
+}
  #sökpuls {
     display: none;
  
 
  }
  #sökstill{
-
     display: inline-block;
  }
 
@@ -81,6 +81,7 @@ display:inline-block;
  
  button:hover, a:hover{
     box-shadow: 4px 4px 8px 4px rgba(57, 159, 217, 1);
+    cursor: pointer;
  }
 
 
@@ -98,8 +99,7 @@ a{
     font-size: 20px;
     background-image: linear-gradient(to bottom right, rgba(18, 160, 226, 0.974),rgb(14, 132, 219),  rgb(244, 244, 192));
     text-shadow: 1px 1px 1.5px rgb(7, 7, 7); 
-    font-family: 'Mochity Pop P One', sans-serif;
-    
+    font-family: 'Mochity Pop P One', sans-serif; 
 }
 
 #sökfält{
@@ -112,12 +112,16 @@ a{
 
 }
 #days{
-    grid-column: 10/12;
+    grid-column: 11/12;
     grid-row: 2/5;
     display: flex;
     flex-direction: column;
-    margin-top: 35px;
-   
+    margin-top: 35px;  
+    margin-left: 50px;
+}
+
+#bilder{
+    margin-top: 0;
     
 }
 a:active{
@@ -127,28 +131,23 @@ a:active{
 .vädret{
     background-image: linear-gradient(to bottom right, rgba(18, 160, 226, 0.974),rgb(14, 132, 219),  rgb(244, 244, 192));
     background-color: 4px 4px 8px 4px rgb(19, 37, 48);
-    grid-column: 3/9;
-    grid-row: 2/6;
+ 
     border-radius: 22px;
     box-shadow: 5px 5px 10px 5px rgba(25, 26, 26, 0.5);
     color: aliceblue;
     border: solid 1px black;
     margin-bottom: 15px;
-    
-}
-
-.veckodag{
-    font-size: 45px;
-    font-family: 'Mochity Pop P One', sans-serif;
-
+    text-shadow: 1px 1px 1.5px rgb(7, 7, 7); 
 }
 
 #vädret{
     grid-column: 3/9;
     grid-row: 2/6;
-    text-shadow: 1px 1px 1.5px rgb(7, 7, 7); 
+}
 
-
+.veckodag{
+    font-size: 45px;
+    font-family: 'Mochity Pop P One', sans-serif;
 }
 
 .dagensVäder{
@@ -156,6 +155,7 @@ display: grid;
 grid-template-columns: repeat(13, 1fr);
 grid-template-rows: repeat(5, 130px);
 margin-bottom: 15px;
+
 
 }
  #content{
@@ -189,10 +189,9 @@ margin-bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    
-   
-    
 }
+
+
 .höger h2{
     font-size: 55px;
     text-align: center;
@@ -220,68 +219,66 @@ margin-bottom: 15px;
 
 @media  screen and (max-width: 1531px) {
     #gridcontainer{
-        position: relative;
-       
+        position: relative;     
     }
+
     #sökfält{
         height: 50px;
         margin-top:15px;
-        margin-left: 15px;
-        
+        margin-left: 205px;  
+        margin-bottom: 55px;
     }
+
     button{
         margin-left: 15px;
         height: 40px;
-        width: 40px;
-
-    }
-    #days a{
-        grid-template-columns: 1/13;
-        grid-row: 1/2;
-        height: 15px;
-        width: 15px;
-        font-size: 10px;
-        margin-top: 0;
+       width: 40px;
+       z-index: 2;
     }
     #days{
-        grid-row: 2/3;
-        grid-column: 1/13;
+        grid-column: 10/12;
+        grid-row: 2/5;
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        margin-top: 35px; 
+      
+       
     }
+
+  
     #content{
        text-align: center;
         margin-right: 15px;
         font-size: 35px;
         position: absolute;
-         top:10px;
-         left: -120px;
+         top:20px;
+         left: -140px;
+         z-index:-1;
+         margin-top: 15px;
         
     }
+
     #vädret{
-        grid-column: 1/13;
-         grid-row: 3/6;
-         margin-left: 25px;
-         display: flex;
-         justify-content: center;
-    
+        grid-column: 1/10;
+         grid-row: 2/6;
+         margin-left: 155px;
+         width: 95%;
+         margin-right: 0 auto;
+         margin-top: 15px;
+         width: 80%;
     }
 
-    .höger{
-        grid-column: 1/13;
-        grid-row:1/4;
-        margin-left: 25px;
-        width: 320px;
-    }
-    .vänster{
-        grid-column: 1/13;
-        grid-row: 4/7;
-        margin-left: 25px;
-        width: 320px;
-      
-    }
+
+
+
+.höger {
+    margin-right: 10px;
+    
+}
+.vänster {
+    margin-right: 10px;
+    width: 45%;
+}
     header{
         height: 250px;
         font-size: 25px;
@@ -289,4 +286,37 @@ margin-bottom: 15px;
 header img{
     display: none;
 }
+}
+
+@media  screen and (max-width: 587px){
+
+
+#vädret{
+    grid-column: 1/13;
+     grid-row: 3/6;
+     margin-left: 5px;
+     width: 95%;
+     margin-left: 10px;
+}
+
+
+ a{
+        height: 15px;
+        width: 15px;
+        font-size: 10px;
+        margin-top: 0;
+        z-index: 2;
+    } 
+     #days{
+        grid-row: 2/3;
+        grid-column: 1/13;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .höger h3, .höger h2{
+        font-size: 20px;
+        text-align: center;
+    }
 }
