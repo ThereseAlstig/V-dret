@@ -7,6 +7,7 @@ const daysDiv = document.getElementById('days').children;
 const basicInfo = document.getElementById('content');
 const mainweather = document.getElementById('vädret');
 
+
 getWeather();
 
 
@@ -30,7 +31,7 @@ let weather = await fetch(`https://api.weatherbit.io/v2.0/forecast/daily?&days=$
     
     basicInfo.innerHTML=`<h2 id ="searchedCity">${cityName}</h2>`;
     let weatherInfo ='';
-   
+    
     
 for(let i=0; i< weatherData.data.length; i++){
     let day = weatherData.data[i];
@@ -54,27 +55,38 @@ for(let i=0; i< weatherData.data.length; i++){
     let veckodagar= ["Söndag", "Måndag", "Tisdag", "Onsdag", "Torsdag", "Fredag", "Lördag"];
     let veckodagsSiffra = datumObjekt.getDay();
     let veckodagarText =veckodagar[veckodagsSiffra];
- 
-
+    let nederbörd = day.precip.toFixed(2);
+  let snö= day.snow.toFixed(2);
+  let snödjup = day.snow_depth.toFixed(2);
     
 
 weatherInfo += 
-              `<div class="vädret">
-              <div class="dagensVäder">
+              `
+
+              <div class="vädret">
               
+              <div class="dagensVäder">
+            
               <div class="höger">
               <h2>${tempNow} &#8451;</h2>
               <img src="icons/${icon}.png" alt="Vädret">
               <h3>${description}</h3>
+              <p>Nederbörd:</p>
+              
+              <p><i class="fa-solid fa-droplet"> </i> ${nederbörd} mm  
+              <i class="fa-regular fa-snowflake"></i> ${snö} mm</p>
+              <p>Snödjup: <i class="fa-solid fa-snowplow"></i>  ${snödjup} mm</p>
+          
               </div>
               <div class="vänster">
               <i>Datum: ${datum}</i>
               <i class="veckodag">${veckodagarText}</i>
               
-              <h3><i class="fa-solid fa-temperature-high"></i>   ${mintemp}/${maxtemp} &#8451;</h3>
+              <h3><i class="fa-solid fa-temperature-high"></i>   ${mintemp} / ${maxtemp} &#8451;</h3>
               <p>${formatsunrise} <img src="bilder2/sun-312708_640.png" alt="sunrise"  height="100px"> ${formatsunset}</p>
               <p><i class="fa-solid fa-wind"></i>
               Vind: ${vind} m/s</p>
+              
               
               </div>
               </div>
@@ -108,7 +120,14 @@ mainweather.innerHTML = weatherInfo;
   getWeather();
 }
 
-  
+
+
+
+
+
+
+
+
 
 //});
 
