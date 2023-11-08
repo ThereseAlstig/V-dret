@@ -7,6 +7,7 @@ body{
     border: 0;
     margin-top: 0 auto;
     backdrop-filter: blur(10px);
+    word-spacing: 4px;
 }
 
 
@@ -24,7 +25,7 @@ font-family: 'Mochiy Pop P one', sans-serif;
 
 header h1{
     font-size: 55px;
-    color: rgba(18, 160, 226, 0.974);
+    color: rgba(232, 235, 237, 0.974);
     text-shadow: 1px 1px 1.5px rgb(7, 7, 7); 
    
 }
@@ -33,7 +34,7 @@ header h1{
 header h2{
     font-size: 35px;
     text-shadow: 1px 1px 1.5px rgb(7, 7, 7); 
-    color: rgba(18, 160, 226, 0.974);
+    color: rgba(232, 238, 241, 0.974);
 }
 #gridcontainer{
     display: grid;
@@ -88,6 +89,7 @@ display:inline-block;
 
 a{
     text-decoration: none;
+    margin-right: 60x;
     height: 45px;
     width: 55px;
     border: 2px solid black;
@@ -141,7 +143,7 @@ a:active{
 }
 
 #vädret{
-    grid-column: 3/9;
+    grid-column: 3/10;
     grid-row: 2/6;
 }
 
@@ -167,7 +169,7 @@ margin-bottom: 15px;
 }
 
 #content h2{
-   text-shadow: 1px 1px 1.5px rgb(7, 7, 7); 
+   text-shadow: 1px 1px 1.5px rgb(245, 242, 242); 
 }
     
 .höger{
@@ -272,12 +274,13 @@ margin-bottom: 15px;
 
 
 .höger {
-    margin-right: 10px;
+    margin-right: 12px;
+    width: 250px;
     
 }
 .vänster {
-    margin-right: 10px;
-    width: 45%;
+    margin-right: 0px;
+    width: 55%;
 }
     header{
         height: 250px;
@@ -298,7 +301,9 @@ header img{
      width: 95%;
      margin-left: 10px;
 }
-
+.höger{
+    width: 100px;
+}
 
  a{
         height: 15px;
@@ -306,6 +311,7 @@ header img{
         font-size: 10px;
         margin-top: 0;
         z-index: 2;
+        margin-left: -5px;
     } 
      #days{
         grid-row: 2/3;
@@ -318,5 +324,8 @@ header img{
     .höger h3, .höger h2{
         font-size: 20px;
         text-align: center;
+    }
+    .höger p{
+        font-size: 13px;
     }
 }
