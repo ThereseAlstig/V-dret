@@ -6,13 +6,17 @@ let days = '1';
 const daysDiv = document.getElementById('days').children;
 const basicInfo = document.getElementById('content');
 const mainweather = document.getElementById('vädret');
+l
+  
+
+
 
 
 getWeather();
 
 
 async function getWeather(){
-city = cityInput.value || 'stockholm';
+city = cityInput.value || 'Stockholm';
 days = days || '1';
 
      try{
@@ -61,9 +65,7 @@ for(let i=0; i< weatherData.data.length; i++){
     
 
 weatherInfo += 
-              `
-
-              <div class="vädret">
+              `<div class="vädret">
               
               <div class="dagensVäder">
             
@@ -96,7 +98,7 @@ weatherInfo +=
 
 console.log(day);
 }
-//let temperature = day.min_temp;
+
 mainweather.innerHTML = weatherInfo;
                     
 }
@@ -116,7 +118,7 @@ mainweather.innerHTML = weatherInfo;
   function visaData(event) {
     event.preventDefault();
     days = parseInt(event.target.getAttribute('datadays'));
-    
+    console.log(days);
   getWeather();
 }
 
@@ -129,24 +131,7 @@ mainweather.innerHTML = weatherInfo;
 
 
 
-//});
-
-
- // getWeather();
-
-//  for(let i = 0; i<daysDiv.length; i++){
-  //  daysDiv[i].addEventListener('click', visaData);
-        //event.preventDefault();
-        //numDays = parseInt(this.getAttribute('datadays'));
- //       if(daysDiv <= 1 && daysDiv >= 10){
-            //days = numDays;
-   //     console.log(days);
-            
-   //     }else{
-    //    console.log('Ogiltig datatyp');    
-  //      }
-        //
-   // }
  
 
 
+// key = 82cadf32e55447518bf89a8fe5426b7b

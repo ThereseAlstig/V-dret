@@ -283,16 +283,26 @@ margin-bottom: 15px;
     width: 55%;
 }
     header{
-        height: 250px;
+        height: 180px;
         font-size: 25px;
+        margin-bottom: 25px;
     }
-header img{
+
+  header img{
     display: none;
-}
+} 
+
 }
 
 @media  screen and (max-width: 587px){
-
+ header h2{
+        display: none;
+       
+    }
+header{
+    height: 200px;
+    
+}
 
 #vädret{
     grid-column: 1/13;
