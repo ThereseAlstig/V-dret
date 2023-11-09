@@ -6,14 +6,8 @@ let days = '1';
 const daysDiv = document.getElementById('days').children;
 const basicInfo = document.getElementById('content');
 const mainweather = document.getElementById('vädret');
-l
-  
-
-
-
 
 getWeather();
-
 
 async function getWeather(){
 city = cityInput.value || 'Stockholm';
@@ -122,16 +116,6 @@ mainweather.innerHTML = weatherInfo;
   getWeather();
 }
 
-
-
-
-
-
-
-
-
-
- 
 
 
 // key = 82cadf32e55447518bf89a8fe5426b7b
